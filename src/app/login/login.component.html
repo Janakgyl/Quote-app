@@ -1,0 +1,10 @@
+<form [formGroup]="loginForm">
+    <h2>LogIn</h2>
+    <input placeholder="Enter email" [formControl]="email">
+    <h6 class="red-text" [hidden]="email.valid || email.untouched">Enter correct email</h6>
+
+    <input placeholder="Enter password" [formControl]="password">
+    <h6 class="red-text" [hidden]="password.valid || password.untouched">Enter valid password and must be greater than 6 characters</h6>
+
+    <button class="btn green" (click)="logIn()" [disabled]="!loginForm.valid">LogIn</button>
+</form>

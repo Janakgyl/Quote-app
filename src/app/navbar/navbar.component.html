@@ -1,0 +1,12 @@
+<nav>
+    <div class="nav-wrapper">
+      <a routerLink="/" class="brand-logo left">MY APP</a>
+      <ul class="right">
+        <li><a *ngIf="! isAuth()" routerLinkActive="active" routerLink="/login">LogIn</a></li>
+        <li><a *ngIf="!isAuth()" routerLinkActive="active" routerLink="/register">Register</a></li>
+        <li><a routerLinkActive="active" routerLink="/create">Create Quote</a></li>
+        <li><button *ngIf="isAuth()" class="btn black" (click)="logOut()">LogOut</button></li>
+      </ul>
+    </div>
+  </nav>
+        

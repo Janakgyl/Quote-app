@@ -1,0 +1,24 @@
+<form #registerForm="ngForm"> 
+    <h1>Register here</h1>
+    <input 
+    type="email"
+    placeholder="Enter email"
+    required
+     ngModel
+     name="email"
+     #email="ngModel">
+    <h6 class="red-text" [hidden]="email.valid || email.untouched">Enter correct email</h6>
+    <input 
+    type="password"
+    placeholder="Enter password"
+    required
+     ngModel
+     name="password"
+     minlength="6"
+     #password="ngModel">
+    <h6 class="red-text" [hidden]="password.valid || password.untouched">Enter valid password and must be greater than 6 characters</h6>
+
+    <button class="btn green" (click)="register(registerForm)" [disabled]="!registerForm.valid">LogIn</button>
+    <br> <br>
+    <button class="btn pink" (click)="reset(registerForm)" [disabled]="!registerForm.valid">Reset</button>
+</form>
